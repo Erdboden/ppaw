@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rent history</title>
+</head>
+<body>
+<table>
+
+    <th:block th:each="brand : ${brands}">
+        <th th:text="${brand}"></th>
+    </th:block>
+
+    <th:block th:each="client : ${client_rents}">
+        <tr>
+            <td th:text="${client.name} + ' ' + ${client.surname}"></td>
+            <td:block th:each="x : ${client.map}">
+                <td th:text="${x.value}"></td>
+            </td:block>
+            <!--<td th:text="${client.mean}"></td>-->
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

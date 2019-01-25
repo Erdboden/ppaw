@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<form method="POST" action="vehicles">
+    <div class="form-group blu-margin">
+        <select class="form-control" name="vehicle" id="dropVehicle">
+            <option value="0">select Vehicle</option>
+            <option th:each="vehicle : ${vehicles}" th:value="${vehicle.id}" th:text="${vehicle.brand} + ' ' + ${vehicle.model}"></option>
+        </select>
+    </div>
+    <input type="submit" value="View">
+</form>
+<table>
+    <th:block th:each="client : ${clients}">
+        <tr>
+            <td th:text="${client.name}"></td>
+            <td th:text="${client.surname}"></td>
+            <td th:text="${client.mean}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
